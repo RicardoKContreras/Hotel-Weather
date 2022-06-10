@@ -10,11 +10,15 @@ const options = {
         'X-RapidAPI-Key': 'b40fbb7a75msh7ad2cc034897e7dp14d8bbjsnf5d6a567e31e'
     }
 };
-fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=charlotte%20north%20carolina&locale=en_US&currency=USD', options)
+
+// searchInput variable will be user submitted
+var searchInput = "charlotte";
+fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=' + searchInput + '&locale=en_US&currency=USD', options)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
+        console.log(data);
         var hotelArray = data;
         var hotelItems = hotelArray.suggestions[1].entities;
         
@@ -29,7 +33,8 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=charlotte%20nort
                 // Assigns the list element the name of the hotel
                 hotelListItem.textContent = hotelItems[i].name;
             }
-        }   
+        }
+
         // If there are 5 or more hotels, only display 5 hotels
         else if (hotelItems.length >= 5) {
 
