@@ -16,12 +16,31 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=charlotte%20nort
     })
     .then(function (data) {
         var hotelArray = data;
-        console.log(hotelArray);
+        var hotelItems = hotelArray.suggestions[1].entities;
+        
+        // If there are less than 5 hotels, only loop the length of the array
+        if (hotelItems.length < 5) {
+            
+            for (var i = 0; i < hotelItems.length; i++) {
+                // Creates list element for hotel
+                var hotelListItem = document.createElement("li");
+                // Puts list in the <ul> element
+                hotelListEl.appendChild(hotelListItem);
+                // Assigns the list element the name of the hotel
+                hotelListItem.textContent = hotelItems[i].name;
+            }
+        }   
+        // If there are 5 or more hotels, only display 5 hotels
+        else if (hotelItems.length >= 5) {
 
-        for (var i = 0; i < 5; i++) {
-            var hotelListItem = document.createElement("li");
-            hotelListEl.appendChild(hotelListItem);
-            hotelListItem.textContent = hotelArray.suggestions[1].entities[i].caption;
+            for (var i = 0; i < 6; i++) {
+                // Creates list element for hotel
+                var hotelListItem = document.createElement("li");
+                // Puts list in the <ul> element
+                hotelListEl.appendChild(hotelListItem);
+                // Assigns the list element the name of the hotel
+                hotelListItem.textContent = hotelItems[i].name;
+            }
         }
     })
     .catch(err => console.error(err));
