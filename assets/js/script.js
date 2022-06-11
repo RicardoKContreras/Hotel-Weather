@@ -80,17 +80,18 @@ fetch(apiUrl)
         document.body.appendChild(dailyWeatherEl);
         var dailyWeatherArray = data.daily;
         console.log(dailyWeatherArray);
-        for (var i = 0; i < 8; i++) {
-
-            
-            var dayEl = document.createElement("p");
+        for (var i = 0; i < 7; i++) {
+            var dayEl = document.createElement("div");
             dailyWeatherEl.appendChild(dayEl);
-            dayEl.textContent = "Day: " + i;
+            dayEl.textContent = moment().add(i,'days').format('dddd');
+            var dayContentEl = document.createElement("p");
+            dayEl.appendChild(dayContentEl);
             var dailyLow = dailyWeatherArray[i].temp.min;
-            dayEl.textContent += " Low: " + dailyLow;
+            dayContentEl.textContent += "Low: " + dailyLow;
             var dailyHigh = dailyWeatherArray[i].temp.max;
-            dayEl.textContent += " High: " + dailyHigh;
-            
+            dayContentEl.textContent += " High: " + dailyHigh;
+            var dailyWeather = dailyWeatherArray[i].weather[0].main;
+            dayContentEl.textContent += " Weather: " + dailyWeather;
     
         }
     });
