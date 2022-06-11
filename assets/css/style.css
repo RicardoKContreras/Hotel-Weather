@@ -1,3 +1,6 @@
-.box {
-    align-items: right;
+.hero {
+    background: url(https://linkedinheaders.com/wp-content/uploads/2018/02/tropical-beach-header.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
