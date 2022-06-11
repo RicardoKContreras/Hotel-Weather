@@ -13,6 +13,7 @@ const options = {
 
 // searchInput variable will be user submitted
 var searchInput = "charlotte";
+// Fetch hotel names
 fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=' + searchInput + '&locale=en_US&currency=USD', options)
     .then(function (response) {
         return response.json();
@@ -48,18 +49,48 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=' + searchInput 
             }
         }
     })
-    .catch(err => console.error(err));
-    const options2 = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Host': 'hotels4.p.rapidapi.com',
-            'X-RapidAPI-Key': 'b40fbb7a75msh7ad2cc034897e7dp14d8bbjsnf5d6a567e31e'
-        }
-    };
+
+
+
+.catch(err => console.error(err));
+const options2 = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Host': 'hotels4.p.rapidapi.com',
+        'X-RapidAPI-Key': 'b40fbb7a75msh7ad2cc034897e7dp14d8bbjsnf5d6a567e31e'
+    }
+};
+
+// Fetch hotel images
 fetch('https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=193124', options2)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
 
+// Fetch weather API
+var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=35.3076&lon=-80.7497&units=imperial&appid=8fc039d2801e6d831fbfaba3fc79944f"
+var repos = "";
+fetch(apiUrl)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        var dailyWeatherEl = document.createElement("section");
+        document.body.appendChild(dailyWeatherEl);
+        var dailyWeatherArray = data.daily;
+        console.log(dailyWeatherArray);
+        for (var i = 0; i < 8; i++) {
 
+            
+            var dayEl = document.createElement("p");
+            dailyWeatherEl.appendChild(dayEl);
+            dayEl.textContent = "Day: " + i;
+            var dailyLow = dailyWeatherArray[i].temp.min;
+            dayEl.textContent += " Low: " + dailyLow;
+            var dailyHigh = dailyWeatherArray[i].temp.max;
+            dayEl.textContent += " High: " + dailyHigh;
+            
+    
+        }
+    });
