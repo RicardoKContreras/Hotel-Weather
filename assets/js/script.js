@@ -76,20 +76,31 @@ fetch(apiUrl)
         return response.json();
     })
     .then(function (data) {
+
+        // Weather section
         var dailyWeatherEl = document.createElement("section");
         document.body.appendChild(dailyWeatherEl);
+        // Weather array
         var dailyWeatherArray = data.daily;
         console.log(dailyWeatherArray);
+        // For loop for displaying 7 day forecast
         for (var i = 0; i < 7; i++) {
+            // Day div element
             var dayEl = document.createElement("div");
             dailyWeatherEl.appendChild(dayEl);
+            // Displays weekday
             dayEl.textContent = moment().add(i,'days').format('dddd');
+            // p element for the information
             var dayContentEl = document.createElement("p");
+            // Information element into the div element
             dayEl.appendChild(dayContentEl);
+            // Low temp for the day
             var dailyLow = dailyWeatherArray[i].temp.min;
             dayContentEl.textContent += "Low: " + dailyLow;
+            // High temp for the day
             var dailyHigh = dailyWeatherArray[i].temp.max;
             dayContentEl.textContent += " High: " + dailyHigh;
+            // Displays weather for the day
             var dailyWeather = dailyWeatherArray[i].weather[0].main;
             dayContentEl.textContent += " Weather: " + dailyWeather;
     
