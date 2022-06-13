@@ -21,7 +21,7 @@ const options2 = {
 var cityLocator = function(cityName, cityState){
     searchInput = cityName;
     getHotels();
-    var openWeatherCityLocator = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "," + cityState + ",840&limit=1&appid=862fa80dbf9297962c039ac6e9c8e055";
+    var openWeatherCityLocator = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "," + cityState + ",840&limit=1&appid=862fa80dbf9297962c039ac6e9c8e055";
     fetch(openWeatherCityLocator)
     .then(function (response) {
         response.json().then(function(data){
