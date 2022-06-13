@@ -1,5 +1,5 @@
 var hotelListEl = document.querySelector("#hotel-list");
-var photoListEl = document.querySelector("#first-Modal");
+var ModalListEl = document.querySelector("#first-Modal");
 
 
 
@@ -7,11 +7,11 @@ var photoListEl = document.querySelector("#first-Modal");
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Host': 'hotels4.p.rapidapi.com',
-        'X-RapidAPI-Key': 'b40fbb7a75msh7ad2cc034897e7dp14d8bbjsnf5d6a567e31e'
+        'X-RapidAPI-Key': 'de8df62b04msh7414b58aaf0f84ap1c8e1bjsn648e2c2867a2',
+		'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
     }
 };
-fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=charlotte%20north%20carolina&locale=en_US&currency=USD', options)
+/*fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=charlotte%20north%20carolina&locale=en_US&currency=USD', options)
     .then(function (response) {
         return response.json();
     })
@@ -66,11 +66,10 @@ fetch('https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=193124', op
     .catch(err => console.error(err))
     .then(function (response) {
         return response.json();
-    })
+    })*/
     
 
-// var name = 'Tiffany'
-// console.log("My name is" + name)
+
 
 
 
@@ -100,21 +99,44 @@ modalBtn.onclick = function(e) {
                clickedHotel = hotelItems[i];
 
                 console.log(clickedHotel);
-            }
-           
-            
+            }   
         }
 
-     
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'de8df62b04msh7414b58aaf0f84ap1c8e1bjsn648e2c2867a2',
+                'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
+            }
+        };
         
+        fetch(`https://hotels4.p.rapidapi.com/properties/get-details?id=` + clickedHotel.destinationId + `&checkIn=2020-01-08&checkOut=2020-01-15&adults1=1&currency=USD&locale=en_US`, options)
+        .then(function (response) {
+            console.log(response);
+            return response.json();
+            
+        })
+        // HotelfullInfo shows a unique description about the hotel
         
-       
-        
-        /*
-        
-        
-        Use different api for description on each hotel.
+        .then(function(hotelDescription){
+            var hotelInfo = hotelDescription;
+            var hotelFullInfo = hotelDescription.neighborhood.neighborhoodLongDescription;
+            
+            ModalListEl.append(hotelFullInfo);
 
-        */
+            console.log(hotelInfo);
+            console.log(hotelFullInfo);
+            
+        })
+
+        
+                //this console log logs the hotels description
+                 //console.log(response.neighborhood.neighborhoodLongDescription)
+            
+                 
+            .catch(err => console.error(err));
+            
+
+        
     })
 };
