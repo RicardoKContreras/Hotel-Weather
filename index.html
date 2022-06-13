@@ -25,9 +25,12 @@
                 <h1 class="title is-1 has-text-light">Hotel-Weather</h1>
                 <h3 class="subtitle is-3 has-text-light">Travel Smarter</h3>
             </div>
-            <div class="column is-two-thirds box">
-                Search
-            </div>
+            <textarea class="column is-two-thirds box" id="user-search">
+            </textarea>
+
+            <!--submit button for search user input-->
+            <div class="drop-down-container"><select id="drop-down"></select></div>
+            <button type="submit" id="submit">submit</button>
         </div>
     </section>
 
@@ -58,13 +61,6 @@
             </div>
         </div>
     </section>
-  
-    <div id="search-bar">
-        <p>Search For a City: </p>
-        <textarea id="user-search"></textarea>
-        <div class="drop-down-container"><select id="drop-down"></select></div>
-        <button type="submit" id="submit">Search</button>
-    </div>
 
 
 
