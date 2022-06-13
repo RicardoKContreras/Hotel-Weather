@@ -3,12 +3,6 @@
     height: 200px;
 }
 
-.drop-down-container{
-    display: inline;
-    position: relative;
-    bottom: 12px;
-}
-
 .hero {
     background: url(https://linkedinheaders.com/wp-content/uploads/2018/02/tropical-beach-header.jpg);
     background-position: center center;
@@ -20,4 +14,9 @@
     position: absolute;
     bottom:  0%;
     width: 100%;
+}
+
+.dropdown {
+    bottom: 0%;
+    height: 40px;
 }
