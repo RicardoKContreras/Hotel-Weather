@@ -7,7 +7,7 @@ const options = {
     method: 'GET',
     headers: {
         'X-RapidAPI-Host': 'hotels4.p.rapidapi.com',
-        'X-RapidAPI-Key': 'b40fbb7a75msh7ad2cc034897e7dp14d8bbjsnf5d6a567e31e'
+        'X-RapidAPI-Key': '7a1c07767emshb906a8527a34194p12956ejsn47ba8352250a'
     }
 };
 
@@ -78,15 +78,14 @@ fetch(apiUrl)
     .then(function (data) {
 
         // Weather section
-        var dailyWeatherEl = document.createElement("section");
-        document.body.appendChild(dailyWeatherEl);
+        var dailyWeatherEl = document.querySelector("#weather");
         // Weather array
         var dailyWeatherArray = data.daily;
         console.log(dailyWeatherArray);
         // For loop for displaying 7 day forecast
         for (var i = 0; i < 7; i++) {
             // Day div element
-            var dayEl = document.createElement("div");
+            var dayEl = document.createElement("p");
             dailyWeatherEl.appendChild(dayEl);
             // Displays weekday
             dayEl.textContent = moment().add(i,'days').format('dddd');
