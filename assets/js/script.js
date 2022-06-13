@@ -10,11 +10,16 @@ const options = {
         'X-RapidAPI-Key': 'b40fbb7a75msh7ad2cc034897e7dp14d8bbjsnf5d6a567e31e'
     }
 };
-fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=charlotte%20north%20carolina&locale=en_US&currency=USD', options)
+
+// searchInput variable will be user submitted
+var searchInput = "charlotte";
+// Fetch hotel names
+fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=' + searchInput + '&locale=en_US&currency=USD', options)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
+        console.log(data);
         var hotelArray = data;
         var hotelItems = hotelArray.suggestions[1].entities;
         
@@ -29,7 +34,8 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=charlotte%20nort
                 // Assigns the list element the name of the hotel
                 hotelListItem.textContent = hotelItems[i].name;
             }
-        }   
+        }
+
         // If there are 5 or more hotels, only display 5 hotels
         else if (hotelItems.length >= 5) {
 
@@ -43,18 +49,60 @@ fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=charlotte%20nort
             }
         }
     })
-    .catch(err => console.error(err));
-    const options2 = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Host': 'hotels4.p.rapidapi.com',
-            'X-RapidAPI-Key': 'b40fbb7a75msh7ad2cc034897e7dp14d8bbjsnf5d6a567e31e'
-        }
-    };
+
+
+
+.catch(err => console.error(err));
+const options2 = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Host': 'hotels4.p.rapidapi.com',
+        'X-RapidAPI-Key': 'b40fbb7a75msh7ad2cc034897e7dp14d8bbjsnf5d6a567e31e'
+    }
+};
+
+// Fetch hotel images
 fetch('https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=193124', options2)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
 
+// Fetch weather API
+var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=35.3076&lon=-80.7497&units=imperial&appid=8fc039d2801e6d831fbfaba3fc79944f"
+var repos = "";
+fetch(apiUrl)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
 
+        // Weather section
+        var dailyWeatherEl = document.createElement("section");
+        document.body.appendChild(dailyWeatherEl);
+        // Weather array
+        var dailyWeatherArray = data.daily;
+        console.log(dailyWeatherArray);
+        // For loop for displaying 7 day forecast
+        for (var i = 0; i < 7; i++) {
+            // Day div element
+            var dayEl = document.createElement("div");
+            dailyWeatherEl.appendChild(dayEl);
+            // Displays weekday
+            dayEl.textContent = moment().add(i,'days').format('dddd');
+            // p element for the information
+            var dayContentEl = document.createElement("p");
+            // Information element into the div element
+            dayEl.appendChild(dayContentEl);
+            // Low temp for the day
+            var dailyLow = dailyWeatherArray[i].temp.min;
+            dayContentEl.textContent += "Low: " + dailyLow;
+            // High temp for the day
+            var dailyHigh = dailyWeatherArray[i].temp.max;
+            dayContentEl.textContent += " High: " + dailyHigh;
+            // Displays weather for the day
+            var dailyWeather = dailyWeatherArray[i].weather[0].main;
+            dayContentEl.textContent += " Weather: " + dailyWeather;
+    
+        }
+    });
