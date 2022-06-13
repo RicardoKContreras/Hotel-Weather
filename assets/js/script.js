@@ -158,3 +158,17 @@ navBar.addEventListener("click", btnHandler);
 
 //create drop down menu for states
 createDropDown();
+
+
+//open modal when clicked
+$(".modal-button").click(function() {
+    var target = $(this).data("target");
+    $("html").addClass("is-clipped");
+    $(target).addClass("is-active");
+ });
+
+//close modal when clicked
+ $(".modal-close").click(function() {
+    $("html").removeClass("is-clipped");
+    $(this).parent().removeClass("is-active");
+ });
