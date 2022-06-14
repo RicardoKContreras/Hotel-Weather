@@ -172,3 +172,66 @@ $(".modal-button").click(function() {
     $("html").removeClass("is-clipped");
     $(this).parent().removeClass("is-active");
  });       
+
+ 
+ //Ricardo code
+ const onClick = function(e) {
+    // e.target gives you the item of whatever you clicked
+    const options3 = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'de8df62b04msh7414b58aaf0f84ap1c8e1bjsn648e2c2867a2',
+            'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
+        }
+    };
+    fetch(`https://hotels4.p.rapidapi.com/locations/v2/search?query=` + document.querySelector("#user-search").value +  `%20` + document.querySelector("option").value + '&locale=en_US&currency=USD', options3)
+    .then(function (response) {
+        console.log(response);
+        return response.json();
+    })
+    .then(function (data) {
+        var hotelArray = data;
+        var hotelItems = hotelArray.suggestions[1].entities;
+        var clickedHotel;
+        console.log(clickedHotel);
+        for (var i = 0; i < hotelItems.length; i++) {
+            // clickedHotel shows descriptive info for a hotel such as name, longititude, latitude, and destinationId
+            // longitiude and latitude can be used for the google maps, destinationId can be used for the API endpoint properties/get-details to dsiplay hotel information on the page
+            if(hotelItems[i].name === e.target.value) {
+               clickedHotel = hotelItems[i];
+                console.log(clickedHotel);
+                console.log(hotelItems);
+                console.log(e.target.value);
+            }
+        }
+    })
+        /*const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'de8df62b04msh7414b58aaf0f84ap1c8e1bjsn648e2c2867a2',
+                'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
+            }
+        };*/
+        fetch(`https://hotels4.p.rapidapi.com/properties/get-details?id=` + clickedHotel.destinationId + `&checkIn=2020-01-08&checkOut=2020-01-15&adults1=1&currency=USD&locale=en_US`, options3)
+        .then(function (response) {
+            console.log(response);
+            return response.json();
+        })
+        // HotelfullInfo shows a unique description about the hotel
+        .then(function(hotelDescription){
+            var hotelInfo = hotelDescription;
+            //var hotelFullInfo = hotelDescription.neighborhood.neighborhoodLongDescription;
+            var hotelFullInfo = "test"
+            console.log(hotelInfo);
+            console.log(hotelFullInfo); 
+            var getHotelInfoEl = document.querySelector("#hotel-description");
+            getHotelInfoEl.textContent = hotelFullInfo;
+            console.log(hotelFullInfo)
+
+        })
+                //this console log logs the hotels description
+                 //console.log(response.neighborhood.neighborhoodLongDescription)
+            .catch(err => console.error(err));
+};
+document.addEventListener("click", onClick);
+ 
