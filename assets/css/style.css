@@ -20,3 +20,9 @@
     bottom: 0%;
     height: 40px;
 }
+
+body {
+    min-height: 600px;
+    margin-bottom: 200px;
+    clear: both;
+}
