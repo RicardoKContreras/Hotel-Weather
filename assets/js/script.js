@@ -5,8 +5,6 @@ var searchInput = "";
 
 
 
-
-
 const options = {
     method: 'GET',
     headers: {
@@ -246,25 +244,46 @@ var getWeatherInfo = function(lat,lon){
         console.log(dailyWeatherArray);
         // For loop for displaying 7 day forecast
         for (var i = 0; i < 7; i++) {
-            // Day div element
-            var dayEl = document.createElement("p");
-            dailyWeatherEl.appendChild(dayEl);
+            var weatherCard = document.createElement("div");
+            weatherCard.setAttribute("class", "columns");
+
             // Displays weekday
-            dayEl.textContent = moment().add(i,'days').format('dddd');
-            // p element for the information
-            var dayContentEl = document.createElement("p");
-            // Information element into the div element
-            dayEl.appendChild(dayContentEl);
-            // Low temp for the day
-            var dailyLow = dailyWeatherArray[i].temp.min;
-            dayContentEl.textContent += "Low: " + dailyLow;
-            // High temp for the day
-            var dailyHigh = dailyWeatherArray[i].temp.max;
-            dayContentEl.textContent += " High: " + dailyHigh;
+            var weekday  = moment().add(i,'days').format('dddd') + " - ";
+
             // Displays weather for the day
             var dailyWeather = dailyWeatherArray[i].weather[0].main;
-            dayContentEl.textContent += " Weather: " + dailyWeather;
-    
+
+            // Low temp for the day
+            var dailyLow = "Low: " + dailyWeatherArray[i].temp.min;
+
+            // High temp for the day
+            var dailyHigh = "High: " + dailyWeatherArray[i].temp.max;
+
+            // Get the weathe icon for the day
+            var weatherIcon = document.createElement("img");
+            var iconUrl =  "http://openweathermap.org/img/wn/" + dailyWeatherArray[i].weather[0].icon + "@2x.png"
+            weatherIcon.setAttribute("src", iconUrl);
+
+            //merge the date and weather on to one line ex: Tuesday - Rain
+            var dateAndWeather = document.createElement("p");
+            dateAndWeather.textContent = weekday + dailyWeather;
+
+            //merge the low and high for the day on a seperate line ex Low: 46F - High: 80F
+            var lowAndHighTemp = document.createElement("p");
+            lowAndHighTemp.textContent = dailyLow + "\u00B0F - " + dailyHigh + "\u00B0F";
+
+            //put the temp and weather in a div
+            var weatherCardText = document.createElement("div");
+            weatherCardText.setAttribute("class", "weather-card-text");
+            weatherCardText.appendChild(dateAndWeather);
+            weatherCardText.appendChild(lowAndHighTemp);
+
+            //append the Icon and text
+            weatherCard.appendChild(weatherIcon);
+            weatherCard.appendChild(weatherCardText);
+
+            //append to the page
+            dailyWeatherEl.appendChild(weatherCard);
         }
     })
 }
@@ -294,13 +313,12 @@ console.log("test");
         var hotelArray = data;
         var hotelItems = hotelArray.suggestions[1].entities;
         console.log(hotelItems)
-            // clickedHotel shows descriptive info for a hotel such as name, longititude, latitude, and destinationId
-            // longitiude and latitude can be used for the google maps, destinationId can be used for the API endpoint properties/get-details to dsiplay hotel information on the page
-            if (hotelItems[0].name === e.target.textContent)
-                var clickedHotel = hotelItems[0];
-                console.log(clickedHotel);
-                console.log(e.target.value);
-
-                
-            })
-        }
+        // clickedHotel shows descriptive info for a hotel such as name, longititude, latitude, and destinationId
+        // longitiude and latitude can be used for the google maps, destinationId can be used for the API endpoint properties/get-details to dsiplay hotel information on the page
+        if (hotelItems[0].name === e.target.textContent){
+            var clickedHotel = hotelItems[0];
+            console.log(clickedHotel);
+            console.log(e.target.value);
+        }     
+    })
+}
