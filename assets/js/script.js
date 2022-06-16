@@ -7,7 +7,7 @@ var ModalListEl = document.querySelector("#first-Modal");
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'de8df62b04msh7414b58aaf0f84ap1c8e1bjsn648e2c2867a2',
+        'X-RapidAPI-Key': '570d281ac0msh9eb53b8d43d10f4p1b02f6jsn16a2cbd64cdf',
 		'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
     }
 };
@@ -84,12 +84,14 @@ modalBtn.onclick = function(e) {
     
     fetch('https://hotels4.p.rapidapi.com/locations/v2/search?query=charlotte%20north%20carolina&locale=en_US&currency=USD', options)
     .then(function (response) {
+        console.log(response);
         return response.json();
     })
     .then(function (data) {
         
         var hotelArray = data;
         var hotelItems = hotelArray.suggestions[1].entities;
+        console.log(hotelItems);
         var clickedHotel;
         for (var i = 0; i < hotelItems.length; i++) {
             // clickedHotel shows descriptive info for a hotel such as name, longititude, latitude, and destinationId
@@ -105,7 +107,7 @@ modalBtn.onclick = function(e) {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'de8df62b04msh7414b58aaf0f84ap1c8e1bjsn648e2c2867a2',
+                'X-RapidAPI-Key': '570d281ac0msh9eb53b8d43d10f4p1b02f6jsn16a2cbd64cdf',
                 'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
             }
         };
@@ -119,16 +121,27 @@ modalBtn.onclick = function(e) {
         // HotelfullInfo shows a unique description about the hotel
         
         .then(function(hotelDescription){
-            var hotelInfo = hotelDescription;
-            var hotelFullInfo = hotelDescription.neighborhood.neighborhoodLongDescription;
+            //hotelInfo GETS FULL ADDREESS
+            var hotelInfo = hotelDescription.data.body.propertyDescription.address.fullAddress;
+            console.log(hotelInfo);
+           
             
-            ModalListEl.append(hotelFullInfo);
+
+            //Creates a GOOGLE MAP ON THE PAGE
+            var createMap =  document.getElementById("gmap_canvas");
+           var makeMap = createMap.setAttribute("src", "https://maps.google.com/maps?q=2880%20B%20" + hotelInfo + "%20&t=&z=13&ie=UTF8&iwloc=&output=embed");
+            
+            
+            console.log(makeMap);
+            //ModalListEl.append(hotelfullInfo);
+            ModalListEl.append(createMap);
 
             console.log(hotelInfo);
             console.log(hotelFullInfo);
             
         })
 
+      
         
                 //this console log logs the hotels description
                  //console.log(response.neighborhood.neighborhoodLongDescription)
@@ -136,7 +149,9 @@ modalBtn.onclick = function(e) {
                  
             .catch(err => console.error(err));
             
-
+            
+            
         
     })
 };
+
