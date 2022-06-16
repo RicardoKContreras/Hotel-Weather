@@ -95,7 +95,7 @@ var getHotels = function(){
             modalContentEl3.appendChild(modalContentEl4);
             var modalContentEl5 = document.createElement("p");
             modalContentEl5.setAttribute("class","modal-card-title");
-            modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+            modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
             modalContentEl4.appendChild(modalContentEl5);
             var modalContentEl6 = document.createElement("section");
             modalContentEl6.setAttribute("class","modal-card-body");
@@ -105,11 +105,6 @@ var getHotels = function(){
             modalContentEl6.appendChild(modalContentEl7);
             var modalContentEl8 = document.createElement("section")
             modalContentEl7.appendChild(modalContentEl8);
-            var modalContentEl9 = document.createElement("h1");
-            modalContentEl9.setAttribute("id","hotel-name");
-            modalContentEl9.setAttribute("class","title is-6");
-            modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-            modalContentEl8.appendChild(modalContentEl9);
             var modalContentEl10 = document.createElement("section");
             modalContentEl7.appendChild(modalContentEl10);
             var modalContentEl11 = document.createElement("p");
@@ -123,7 +118,7 @@ var getHotels = function(){
             modalContentEl12.appendChild(modalContentEl13);
 
 
-            modalContentEl13.textContent = "Insert map here"; // might need i [MAP]
+             // might need i [MAP]
 
                 var mapEl = document.createElement("iframe");
                 modalContentEl13.appendChild(mapEl);
@@ -201,7 +196,7 @@ var getHotels = function(){
             modalContentEl3.appendChild(modalContentEl4);
             var modalContentEl5 = document.createElement("p");
             modalContentEl5.setAttribute("class","modal-card-title");
-            modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+            modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
             modalContentEl4.appendChild(modalContentEl5);
             var modalContentEl6 = document.createElement("section");
             modalContentEl6.setAttribute("class","modal-card-body");
@@ -211,11 +206,6 @@ var getHotels = function(){
             modalContentEl6.appendChild(modalContentEl7);
             var modalContentEl8 = document.createElement("section")
             modalContentEl7.appendChild(modalContentEl8);
-            var modalContentEl9 = document.createElement("h1");
-            modalContentEl9.setAttribute("id","hotel-name");
-            modalContentEl9.setAttribute("class","title is-6");
-            modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-            modalContentEl8.appendChild(modalContentEl9);
             var modalContentEl10 = document.createElement("section");
             modalContentEl7.appendChild(modalContentEl10);
             var modalContentEl11 = document.createElement("p");
@@ -301,7 +291,7 @@ var getHotels = function(){
             modalContentEl3.appendChild(modalContentEl4);
             var modalContentEl5 = document.createElement("p");
             modalContentEl5.setAttribute("class","modal-card-title");
-            modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+            modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
             modalContentEl4.appendChild(modalContentEl5);
             var modalContentEl6 = document.createElement("section");
             modalContentEl6.setAttribute("class","modal-card-body");
@@ -311,11 +301,6 @@ var getHotels = function(){
             modalContentEl6.appendChild(modalContentEl7);
             var modalContentEl8 = document.createElement("section")
             modalContentEl7.appendChild(modalContentEl8);
-            var modalContentEl9 = document.createElement("h1");
-            modalContentEl9.setAttribute("id","hotel-name");
-            modalContentEl9.setAttribute("class","title is-6");
-            modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-            modalContentEl8.appendChild(modalContentEl9);
             var modalContentEl10 = document.createElement("section");
             modalContentEl7.appendChild(modalContentEl10);
             var modalContentEl11 = document.createElement("p");
@@ -404,7 +389,7 @@ var getHotels = function(){
                 modalContentEl3.appendChild(modalContentEl4);
                 var modalContentEl5 = document.createElement("p");
                 modalContentEl5.setAttribute("class","modal-card-title");
-                modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+                modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
                 modalContentEl4.appendChild(modalContentEl5);
                 var modalContentEl6 = document.createElement("section");
                 modalContentEl6.setAttribute("class","modal-card-body");
@@ -414,11 +399,6 @@ var getHotels = function(){
                 modalContentEl6.appendChild(modalContentEl7);
                 var modalContentEl8 = document.createElement("section")
                 modalContentEl7.appendChild(modalContentEl8);
-                var modalContentEl9 = document.createElement("h1");
-                modalContentEl9.setAttribute("id","hotel-name");
-                modalContentEl9.setAttribute("class","title is-6");
-                modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-                modalContentEl8.appendChild(modalContentEl9);
                 var modalContentEl10 = document.createElement("section");
                 modalContentEl7.appendChild(modalContentEl10);
                 var modalContentEl11 = document.createElement("p");
@@ -501,7 +481,7 @@ var getHotels = function(){
                 modalContentEl3.appendChild(modalContentEl4);
                 var modalContentEl5 = document.createElement("p");
                 modalContentEl5.setAttribute("class","modal-card-title");
-                modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+                modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
                 modalContentEl4.appendChild(modalContentEl5);
                 var modalContentEl6 = document.createElement("section");
                 modalContentEl6.setAttribute("class","modal-card-body");
@@ -511,11 +491,6 @@ var getHotels = function(){
                 modalContentEl6.appendChild(modalContentEl7);
                 var modalContentEl8 = document.createElement("section")
                 modalContentEl7.appendChild(modalContentEl8);
-                var modalContentEl9 = document.createElement("h1");
-                modalContentEl9.setAttribute("id","hotel-name");
-                modalContentEl9.setAttribute("class","title is-6");
-                modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-                modalContentEl8.appendChild(modalContentEl9);
                 var modalContentEl10 = document.createElement("section");
                 modalContentEl7.appendChild(modalContentEl10);
                 var modalContentEl11 = document.createElement("p");
@@ -598,7 +573,7 @@ var getHotels = function(){
                 modalContentEl3.appendChild(modalContentEl4);
                 var modalContentEl5 = document.createElement("p");
                 modalContentEl5.setAttribute("class","modal-card-title");
-                modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+                modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
                 modalContentEl4.appendChild(modalContentEl5);
                 var modalContentEl6 = document.createElement("section");
                 modalContentEl6.setAttribute("class","modal-card-body");
@@ -608,11 +583,6 @@ var getHotels = function(){
                 modalContentEl6.appendChild(modalContentEl7);
                 var modalContentEl8 = document.createElement("section")
                 modalContentEl7.appendChild(modalContentEl8);
-                var modalContentEl9 = document.createElement("h1");
-                modalContentEl9.setAttribute("id","hotel-name");
-                modalContentEl9.setAttribute("class","title is-6");
-                modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-                modalContentEl8.appendChild(modalContentEl9);
                 var modalContentEl10 = document.createElement("section");
                 modalContentEl7.appendChild(modalContentEl10);
                 var modalContentEl11 = document.createElement("p");
@@ -707,7 +677,7 @@ var getHotels = function(){
             modalContentEl3.appendChild(modalContentEl4);
             var modalContentEl5 = document.createElement("p");
             modalContentEl5.setAttribute("class","modal-card-title");
-            modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+            modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
             modalContentEl4.appendChild(modalContentEl5);
             var modalContentEl6 = document.createElement("section");
             modalContentEl6.setAttribute("class","modal-card-body");
@@ -717,11 +687,6 @@ var getHotels = function(){
             modalContentEl6.appendChild(modalContentEl7);
             var modalContentEl8 = document.createElement("section")
             modalContentEl7.appendChild(modalContentEl8);
-            var modalContentEl9 = document.createElement("h1");
-            modalContentEl9.setAttribute("id","hotel-name");
-            modalContentEl9.setAttribute("class","title is-6");
-            modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-            modalContentEl8.appendChild(modalContentEl9);
             var modalContentEl10 = document.createElement("section");
             modalContentEl7.appendChild(modalContentEl10);
             var modalContentEl11 = document.createElement("p");
@@ -807,7 +772,7 @@ var getHotels = function(){
                 modalContentEl3.appendChild(modalContentEl4);
                 var modalContentEl5 = document.createElement("p");
                 modalContentEl5.setAttribute("class","modal-card-title");
-                modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+                modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
                 modalContentEl4.appendChild(modalContentEl5);
                 var modalContentEl6 = document.createElement("section");
                 modalContentEl6.setAttribute("class","modal-card-body");
@@ -817,11 +782,6 @@ var getHotels = function(){
                 modalContentEl6.appendChild(modalContentEl7);
                 var modalContentEl8 = document.createElement("section")
                 modalContentEl7.appendChild(modalContentEl8);
-                var modalContentEl9 = document.createElement("h1");
-                modalContentEl9.setAttribute("id","hotel-name");
-                modalContentEl9.setAttribute("class","title is-6");
-                modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-                modalContentEl8.appendChild(modalContentEl9);
                 var modalContentEl10 = document.createElement("section");
                 modalContentEl7.appendChild(modalContentEl10);
                 var modalContentEl11 = document.createElement("p");
@@ -907,7 +867,7 @@ var getHotels = function(){
                 modalContentEl3.appendChild(modalContentEl4);
                 var modalContentEl5 = document.createElement("p");
                 modalContentEl5.setAttribute("class","modal-card-title");
-                modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+                modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
                 modalContentEl4.appendChild(modalContentEl5);
                 var modalContentEl6 = document.createElement("section");
                 modalContentEl6.setAttribute("class","modal-card-body");
@@ -917,11 +877,6 @@ var getHotels = function(){
                 modalContentEl6.appendChild(modalContentEl7);
                 var modalContentEl8 = document.createElement("section")
                 modalContentEl7.appendChild(modalContentEl8);
-                var modalContentEl9 = document.createElement("h1");
-                modalContentEl9.setAttribute("id","hotel-name");
-                modalContentEl9.setAttribute("class","title is-6");
-                modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-                modalContentEl8.appendChild(modalContentEl9);
                 var modalContentEl10 = document.createElement("section");
                 modalContentEl7.appendChild(modalContentEl10);
                 var modalContentEl11 = document.createElement("p");
@@ -1007,7 +962,7 @@ var getHotels = function(){
                 modalContentEl3.appendChild(modalContentEl4);
                 var modalContentEl5 = document.createElement("p");
                 modalContentEl5.setAttribute("class","modal-card-title");
-                modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+                modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
                 modalContentEl4.appendChild(modalContentEl5);
                 var modalContentEl6 = document.createElement("section");
                 modalContentEl6.setAttribute("class","modal-card-body");
@@ -1017,11 +972,6 @@ var getHotels = function(){
                 modalContentEl6.appendChild(modalContentEl7);
                 var modalContentEl8 = document.createElement("section")
                 modalContentEl7.appendChild(modalContentEl8);
-                var modalContentEl9 = document.createElement("h1");
-                modalContentEl9.setAttribute("id","hotel-name");
-                modalContentEl9.setAttribute("class","title is-6");
-                modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-                modalContentEl8.appendChild(modalContentEl9);
                 var modalContentEl10 = document.createElement("section");
                 modalContentEl7.appendChild(modalContentEl10);
                 var modalContentEl11 = document.createElement("p");
@@ -1108,7 +1058,7 @@ var getHotels = function(){
             modalContentEl3.appendChild(modalContentEl4);
             var modalContentEl5 = document.createElement("p");
             modalContentEl5.setAttribute("class","modal-card-title");
-            modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+            modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
             modalContentEl4.appendChild(modalContentEl5);
             var modalContentEl6 = document.createElement("section");
             modalContentEl6.setAttribute("class","modal-card-body");
@@ -1118,11 +1068,6 @@ var getHotels = function(){
             modalContentEl6.appendChild(modalContentEl7);
             var modalContentEl8 = document.createElement("section")
             modalContentEl7.appendChild(modalContentEl8);
-            var modalContentEl9 = document.createElement("h1");
-            modalContentEl9.setAttribute("id","hotel-name");
-            modalContentEl9.setAttribute("class","title is-6");
-            modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-            modalContentEl8.appendChild(modalContentEl9);
             var modalContentEl10 = document.createElement("section");
             modalContentEl7.appendChild(modalContentEl10);
             var modalContentEl11 = document.createElement("p");
@@ -1208,7 +1153,7 @@ var getHotels = function(){
             modalContentEl3.appendChild(modalContentEl4);
             var modalContentEl5 = document.createElement("p");
             modalContentEl5.setAttribute("class","modal-card-title");
-            modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+            modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
             modalContentEl4.appendChild(modalContentEl5);
             var modalContentEl6 = document.createElement("section");
             modalContentEl6.setAttribute("class","modal-card-body");
@@ -1218,11 +1163,6 @@ var getHotels = function(){
             modalContentEl6.appendChild(modalContentEl7);
             var modalContentEl8 = document.createElement("section")
             modalContentEl7.appendChild(modalContentEl8);
-            var modalContentEl9 = document.createElement("h1");
-            modalContentEl9.setAttribute("id","hotel-name");
-            modalContentEl9.setAttribute("class","title is-6");
-            modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-            modalContentEl8.appendChild(modalContentEl9);
             var modalContentEl10 = document.createElement("section");
             modalContentEl7.appendChild(modalContentEl10);
             var modalContentEl11 = document.createElement("p");
@@ -1308,7 +1248,7 @@ var getHotels = function(){
             modalContentEl3.appendChild(modalContentEl4);
             var modalContentEl5 = document.createElement("p");
             modalContentEl5.setAttribute("class","modal-card-title");
-            modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+            modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
             modalContentEl4.appendChild(modalContentEl5);
             var modalContentEl6 = document.createElement("section");
             modalContentEl6.setAttribute("class","modal-card-body");
@@ -1318,11 +1258,6 @@ var getHotels = function(){
             modalContentEl6.appendChild(modalContentEl7);
             var modalContentEl8 = document.createElement("section")
             modalContentEl7.appendChild(modalContentEl8);
-            var modalContentEl9 = document.createElement("h1");
-            modalContentEl9.setAttribute("id","hotel-name");
-            modalContentEl9.setAttribute("class","title is-6");
-            modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-            modalContentEl8.appendChild(modalContentEl9);
             var modalContentEl10 = document.createElement("section");
             modalContentEl7.appendChild(modalContentEl10);
             var modalContentEl11 = document.createElement("p");
@@ -1408,7 +1343,7 @@ var getHotels = function(){
             modalContentEl3.appendChild(modalContentEl4);
             var modalContentEl5 = document.createElement("p");
             modalContentEl5.setAttribute("class","modal-card-title");
-            modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+            modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
             modalContentEl4.appendChild(modalContentEl5);
             var modalContentEl6 = document.createElement("section");
             modalContentEl6.setAttribute("class","modal-card-body");
@@ -1418,11 +1353,6 @@ var getHotels = function(){
             modalContentEl6.appendChild(modalContentEl7);
             var modalContentEl8 = document.createElement("section")
             modalContentEl7.appendChild(modalContentEl8);
-            var modalContentEl9 = document.createElement("h1");
-            modalContentEl9.setAttribute("id","hotel-name");
-            modalContentEl9.setAttribute("class","title is-6");
-            modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-            modalContentEl8.appendChild(modalContentEl9);
             var modalContentEl10 = document.createElement("section");
             modalContentEl7.appendChild(modalContentEl10);
             var modalContentEl11 = document.createElement("p");
@@ -1508,7 +1438,7 @@ var getHotels = function(){
             modalContentEl3.appendChild(modalContentEl4);
             var modalContentEl5 = document.createElement("p");
             modalContentEl5.setAttribute("class","modal-card-title");
-            modalContentEl5.textContent = "Insert photos here"; // might need i [PHOTOS]
+            modalContentEl5.textContent = selectedHotelName; // might need i [PHOTOS]
             modalContentEl4.appendChild(modalContentEl5);
             var modalContentEl6 = document.createElement("section");
             modalContentEl6.setAttribute("class","modal-card-body");
@@ -1518,11 +1448,6 @@ var getHotels = function(){
             modalContentEl6.appendChild(modalContentEl7);
             var modalContentEl8 = document.createElement("section")
             modalContentEl7.appendChild(modalContentEl8);
-            var modalContentEl9 = document.createElement("h1");
-            modalContentEl9.setAttribute("id","hotel-name");
-            modalContentEl9.setAttribute("class","title is-6");
-            modalContentEl9.textContent = selectedHotelName; // [HOTEL NAME]
-            modalContentEl8.appendChild(modalContentEl9);
             var modalContentEl10 = document.createElement("section");
             modalContentEl7.appendChild(modalContentEl10);
             var modalContentEl11 = document.createElement("p");
