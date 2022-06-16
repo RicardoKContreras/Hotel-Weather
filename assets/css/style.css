@@ -26,3 +26,8 @@ body {
     margin-bottom: 200px;
     clear: both;
 }
+
+.weather-card-text{
+    position: relative;
+    top: 25px;
+}
