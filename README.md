@@ -20,3 +20,6 @@ WHEN I click outside of the modal
 THEN my history of my searches and the current weather for the hotel I clicked is displayed
 
 ## Notes
+
+ScreenShot of Application
+![First group project](https://user-images.githubusercontent.com/104086686/174871954-67485943-c83c-45ca-8d18-5c499da716f9.png)
